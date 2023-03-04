@@ -2,7 +2,6 @@ mod camera;
 mod game_state;
 mod map;
 mod map_builder;
-mod player;
 
 pub mod prelude {
     pub use bracket_lib::prelude::*;
@@ -14,5 +13,7 @@ pub mod prelude {
     pub use super::game_state::*;
     pub use super::map::*;
     pub use super::map_builder::*;
-    pub use super::player::*;
+    pub use legion::*;
+    pub use legion::world::SubWorld;
+    pub use legion::systems::CommandBuffer;
 }

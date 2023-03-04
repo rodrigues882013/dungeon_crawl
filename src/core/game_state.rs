@@ -2,9 +2,9 @@
 use super::prelude::*;
 
 pub struct State {
-    map: Map,
-    player: Player,
-    camera: Camera,
+    ecs : World,
+    resources: Resources,
+    systems: Schedule,
 }
 
 impl State {
@@ -26,8 +26,5 @@ impl GameState for State {
         ctx.cls();
         ctx.set_active_console(1);
         ctx.cls();
-        self.player.update(ctx, &self.map, &mut self.camera);
-        self.map.render(ctx, &self.camera);
-        self.player.render(ctx, &self.camera);
     }
 }
