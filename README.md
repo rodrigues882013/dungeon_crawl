@@ -15,8 +15,8 @@ by [Buch](https://opengameart.org/users/buch)
 - https://opengameart.org/content/fantasy-sword-set and https://opengameart.org/users/melle
 by [MELLE](https://opengameart.org/users/melle)
 
-The tiles were created by Nick [chamons](https://github.com/chamons)
-https://github.com/crawl/tiles by [chamons](https://github.com/chamons)
+The tiles were created by [chamons](https://github.com/chamons)
+https://github.com/crawl/tiles
 
 ## Reference
 - [Hands-On Rust](https://www.amazon.com.br/Hands-Rust-Effective-Learning-Development/dp/1680508164)
