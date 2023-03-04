@@ -2,6 +2,8 @@
 This game is just a companion to understand rust, and game development. It is based on the book
 Hands-On Rust. It does not have any commercial purpose.
 
+![a](pictures/demov1.png "Game Preview")
+
 ## Third party libraries
 - [bracket-lib](https://github.com/amethyst/bracket-lib)
 - [legion](https://github.com/amethyst/legion)
