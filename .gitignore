@@ -1,7 +1,2 @@
 target/*
 .idea/*
-.vscode/*
-
-# Added by cargo
-
-/target
