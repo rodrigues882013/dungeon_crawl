@@ -4,6 +4,7 @@ mod game_state;
 mod map;
 mod map_builder;
 mod spawner;
+mod turn_state;
 
 pub mod prelude {
     pub use bracket_lib::prelude::*;
@@ -21,4 +22,5 @@ pub mod prelude {
     pub use crate::core::game_state::*;
     pub use crate::core::map::*;
     pub use crate::core::map_builder::*;
+    pub use crate::core::turn_state::*;
 }

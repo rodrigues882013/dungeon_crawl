@@ -1,5 +1,4 @@
 #![warn(clippy::pedantic)]
-
 use super::prelude::*;
 use crate::core::prelude::query::{And, ComponentFilter, Passthrough, Query};
 
