@@ -43,9 +43,6 @@ impl MapBuilder {
                     overlap = true;
                 }
             }
-            // if self.rooms.iter().any(|r| r.intersect(&room)) {
-            //     return;
-            // }
 
             if !overlap {
                 room.for_each(|p| {
