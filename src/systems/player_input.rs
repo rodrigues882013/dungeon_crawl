@@ -10,7 +10,7 @@ pub fn player_input(
     #[resource] key: &Option<VirtualKeyCode>,
     #[resource] turn_state: &mut TurnState,
 ) {
-    let mut players = <(Entity,&mut Point)>::query().filter(component::<Player>());
+    let mut players = <(Entity, &mut Point)>::query().filter(component::<Player>());
 
     if let Some(key) = key {
         let delta = match key {
