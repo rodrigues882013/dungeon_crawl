@@ -8,8 +8,8 @@ fn get_enemy(enemy_type: &str) -> (i32, String, FontCharType) {
         "orc" => (2, "Orc".to_string(), to_cp437('o')),
         "ogre" => (3, "Ogre".to_string(), to_cp437('O')),
         "ettin" => (4, "Ettin".to_string(), to_cp437('E')),
-        _ => panic!("No enemy type found")
-    }
+        _ => panic!("No enemy type found"),
+    };
 }
 
 pub fn spawn_player(ecs: &mut World, pos: Point) {
@@ -28,11 +28,11 @@ pub fn spawn_player(ecs: &mut World, pos: Point) {
 }
 
 pub fn spawn_monster(ecs: &mut World, rng: &mut RandomNumberGenerator, pos: Point) {
-    let (hp, name, glyph) = match rng.roll_dice(1,10) {
+    let (hp, name, glyph) = match rng.roll_dice(1, 10) {
         1 => get_enemy("goblin"),
         2 => get_enemy("orc"),
-        3..=8=> get_enemy("ettin"),
-        _ => get_enemy("ogre")
+        3..=8 => get_enemy("ettin"),
+        _ => get_enemy("ogre"),
     };
 
     ecs.push((
@@ -43,7 +43,10 @@ pub fn spawn_monster(ecs: &mut World, rng: &mut RandomNumberGenerator, pos: Poin
             glyph,
         },
         MovingRandomly {},
-        Health{current: hp, max: hp},
-        Name(name)
+        Health {
+            current: hp,
+            max: hp,
+        },
+        Name(name),
     ));
 }
