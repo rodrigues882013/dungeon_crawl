@@ -1,6 +1,8 @@
+mod chasing;
 mod combat;
 mod end_turn;
 mod entity_render;
+mod fov;
 mod hud;
 mod map_render;
 mod movement;
@@ -16,9 +18,11 @@ pub mod prelude {
     pub use legion::world::SubWorld;
     pub use legion::*;
 
+    pub use super::chasing::*;
     pub use super::combat::*;
     pub use super::end_turn::*;
     pub use super::entity_render::*;
+    pub use super::fov::*;
     pub use super::hud::*;
     pub use super::map_render::*;
     pub use super::movement::*;
