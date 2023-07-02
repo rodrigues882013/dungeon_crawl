@@ -14,7 +14,7 @@ pub fn tooltips(ecs: &SubWorld, #[resource] mouse_pos: &Point, #[resource] camer
     let map_pos = *mouse_pos + offset;
     let mut draw_batch = DrawBatch::new();
     draw_batch.target(2);
-    let player_fov = fov.iter(ecs).nth(0).unwrap();
+    let player_fov = fov.iter(ecs).next().unwrap();
 
     positions
         .iter(ecs)

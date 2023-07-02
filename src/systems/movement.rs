@@ -42,5 +42,5 @@ pub fn movement(
         }
     }
     // Remove from the queue to avoid reprocess the same message.
-    commands.remove(*entity)
+    commands.remove(*entity);
 }
