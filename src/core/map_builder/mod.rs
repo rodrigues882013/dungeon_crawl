@@ -6,6 +6,7 @@ use crate::core::map_builder::automata::CellularAutomataArchitect;
 use crate::core::map_builder::drunkard::DrunkardsWalkArchitect;
 use crate::core::map_builder::prefab::apply_prefab;
 use crate::core::map_builder::rooms::RoomsArchitect;
+use crate::core::map_builder::themes::{DungeonTheme, ForestTheme};
 
 use super::prelude::*;
 
@@ -14,6 +15,7 @@ mod drunkard;
 mod empty;
 mod prefab;
 mod rooms;
+mod themes;
 
 const NUM_ROOMS: usize = 20;
 const UNREACHABLE: &f32 = &f32::MAX;
@@ -24,6 +26,7 @@ pub struct MapBuilder {
     pub monster_spawns: Vec<Point>,
     pub player_start: Point,
     pub amulet_start: Point,
+    pub theme: Box<dyn MapTheme>
 }
 
 trait MapArchitect {
@@ -42,7 +45,11 @@ impl MapBuilder {
             _ => Box::new(CellularAutomataArchitect {}),
         };
         let mut mb = architect.new(rng);
-        //apply_prefab(&mut mb, rng);
+        apply_prefab(&mut mb, rng);
+        mb.theme = match rng.range(0, 2) {
+            0 => DungeonTheme::new(),
+            _ => ForestTheme::new()
+        };
         mb
     }
 
