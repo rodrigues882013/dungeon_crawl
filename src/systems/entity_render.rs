@@ -12,7 +12,7 @@ pub fn entity_render(ecs: &SubWorld, #[resource] camera: &Camera) {
     draw_batch.target(1);
 
     let offset = Point::new(camera.left_x, camera.top_y);
-    let player_fov = fov.iter(ecs).nth(0).unwrap();
+    let player_fov = fov.iter(ecs).next().unwrap();
 
     <(&Point, &Render)>::query()
         .iter(ecs)

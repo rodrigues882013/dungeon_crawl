@@ -1,5 +1,8 @@
 #![warn(clippy::pedantic)]
+
 use super::prelude::*;
+use legion::query::Query;
+use std::iter::Flatten;
 
 #[system]
 #[write_component(Point)]
@@ -25,10 +28,10 @@ pub fn player_input(
             _ => Point::new(0, 0),
         };
 
-        let (player_entity, destination) = players
-            .iter(ecs)
-            .find_map(|(entity, pos)| Some((*entity, *pos + delta)))
-            .unwrap();
+        let (player_entity, destination) = Option::unwrap(Flatten::find_map(
+            &mut Query::iter(&mut players, ecs),
+            |(entity, pos)| Some((*entity, *pos + delta)),
+        ));
 
         let mut enemies = <(Entity, &Point)>::query().filter(component::<Enemy>());
         let mut did_something = false;

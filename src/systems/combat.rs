@@ -12,7 +12,7 @@ pub fn combat(ecs: &mut SubWorld, commands: &mut CommandBuffer) {
         .map(|(entity, attack)| (*entity, attack.target))
         .collect();
 
-    targets.iter().for_each(|(message, target)| {
+    for (message, target) in &targets {
         let is_player = ecs
             .entry_ref(*target)
             .unwrap()
@@ -30,5 +30,5 @@ pub fn combat(ecs: &mut SubWorld, commands: &mut CommandBuffer) {
             }
         }
         commands.remove(*message);
-    });
+    }
 }
