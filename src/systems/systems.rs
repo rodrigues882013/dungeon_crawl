@@ -15,6 +15,7 @@ pub fn build_input_scheduler() -> Schedule {
 
 pub fn build_player_scheduler() -> Schedule {
     Schedule::builder()
+        .add_system(use_item_system())
         .add_system(combat_system())
         .flush()
         .add_system(movement_system())
@@ -32,6 +33,7 @@ pub fn build_monster_scheduler() -> Schedule {
         .add_system(random_move_system())
         .add_system(chasing_system())
         .flush()
+        .add_system(use_item_system())
         .add_system(combat_system())
         .flush()
         .add_system(movement_system())

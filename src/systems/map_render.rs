@@ -8,7 +8,8 @@ pub fn map_render(
     ecs: &SubWorld,
     #[resource] map: &Map,
     #[resource] camera: &Camera,
-    #[resource] theme: &Box<dyn MapTheme>) {
+    #[resource] theme: &Box<dyn MapTheme>,
+) {
     let mut fov = <&FieldOfView>::query().filter(component::<Player>());
     let mut draw_batch = DrawBatch::new();
     draw_batch.target(0);
