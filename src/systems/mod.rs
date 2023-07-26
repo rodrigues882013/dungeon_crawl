@@ -10,6 +10,7 @@ mod player_input;
 mod random_move;
 mod systems;
 mod tooltips;
+mod use_item;
 
 pub mod prelude {
     pub use crate::core::prelude::*;
@@ -30,4 +31,5 @@ pub mod prelude {
     pub use super::random_move::*;
     pub use super::systems::*;
     pub use super::tooltips::*;
+    pub use super::use_item::*;
 }
