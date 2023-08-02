@@ -7,6 +7,7 @@ const NUM_TILES: usize = (SCREEN_WIDTH * SCREEN_HEIGHT) as usize;
 pub enum TileType {
     Wall,
     Floor,
+    Exit,
 }
 
 pub struct Map {
@@ -32,7 +33,7 @@ impl Map {
 
     pub fn is_a_valid_movement(&self, point: Point) -> bool {
         let tile = self.tiles[map_idx(point.x, point.y)];
-        self.in_bounds(point) && tile == TileType::Floor
+        self.in_bounds(point) && tile == TileType::Floor || tile == TileType::Exit
     }
 
     pub fn try_move(&self, point: Point) -> Option<usize> {
